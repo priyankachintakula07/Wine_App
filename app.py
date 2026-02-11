@@ -22,7 +22,7 @@ def load_artifacts():
     with open("New_RFmodel.pkl", "rb") as f:
         model = pickle.load(f)
 
-    with open("New_Scalar.pkl", "rb") as f:
+    with open("New_Scaler.pkl", "rb") as f:
         Scaler = pickle.load(f)
 
     return model, Scaler
@@ -61,5 +61,6 @@ if st.button("Predict Wine Quality"):
 
     # Predict
     prediction = model.predict(scaled_input)
+
 
     st.success(f"🍷 Predicted Wine Quality: **{int(prediction[0])}**")
